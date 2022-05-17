@@ -11,6 +11,6 @@ class Article < ApplicationRecord
   include Visible
   has_many :comments, dependent: :destroy
   validates_associated :comments
-  validates :title, presence: true
+  validates :title, presence: {message:"Please give the title of article it is necassary"}
   validates :body, presence: true, length: {minimum: 10}
 end
